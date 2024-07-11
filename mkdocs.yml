@@ -1,6 +1,6 @@
 site_name: Exploit Documentation
 repo_name: 'Exploit Documentation'
-repo_url: 'https://github.com/wally-rblx/Rbx-Exploit-Docs'
+repo_url: 'https://github.com/luau/wally-rbxdocs'
 
 theme:
   name: 'material'
