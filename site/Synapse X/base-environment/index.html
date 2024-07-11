@@ -1,0 +1,1385 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Base Environment - Exploit Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#base-environment" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Exploit Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Exploit Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Base Environment
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Exploit Documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Exploit Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Exploit Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Exploit Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome!" class="md-nav__link">
+      Welcome!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Elysian
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Elysian
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Elysian/base-environment/" title="Base Environment" class="md-nav__link">
+      Base Environment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      ProtoSmasher
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        ProtoSmasher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/base-environment/" title="Base Environment" class="md-nav__link">
+      Base Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/constants/" title="Constants" class="md-nav__link">
+      Constants
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Libraries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Libraries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/aes/" title="AES" class="md-nav__link">
+      AES
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/base64/" title="Base64" class="md-nav__link">
+      Base64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/bit/" title="Bit" class="md-nav__link">
+      Bit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/debug/" title="Debug" class="md-nav__link">
+      Debug
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/drawing/" title="Drawing" class="md-nav__link">
+      Drawing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/input/" title="Input" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/websocket/" title="WebSocket" class="md-nav__link">
+      WebSocket
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Synapse X
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Synapse X
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Base Environment
+      </label>
+    
+    <a href="./" title="Base Environment" class="md-nav__link md-nav__link--active">
+      Base Environment
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hookfunction" class="md-nav__link">
+    hookfunction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgenv" class="md-nav__link">
+    getgenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyrelease" class="md-nav__link">
+    keyrelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setclipboard" class="md-nav__link">
+    setclipboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2press" class="md-nav__link">
+    mouse2press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsenv" class="md-nav__link">
+    getsenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkcaller" class="md-nav__link">
+    checkcaller
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hookfunction" class="md-nav__link">
+    hookfunction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgenv" class="md-nav__link">
+    getgenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyrelease" class="md-nav__link">
+    keyrelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setclipboard" class="md-nav__link">
+    setclipboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2press" class="md-nav__link">
+    mouse2press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsenv" class="md-nav__link">
+    getsenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkcaller" class="md-nav__link">
+    checkcaller
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/edit/master/docs/Synapse X/base-environment.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="base-environment">Base Environment</h1>
+<h2 id="hookfunction">hookfunction</h2>
+<div class="codehilite"><pre><span></span><span class="n">hookfunction</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">&gt;</span> <span class="nf">old</span><span class="p">,</span> <span class="o">&lt;</span><span class="kr">function</span><span class="err">&gt;</span> <span class="nf">hook</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Hooks function 'old', replacing it with the function 'hook'. The old function is returned, you must use it to call the function further.</p>
+<h2 id="getgenv">getgenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">getgenv</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the environment that will be applied to each script ran by Synapse.</p>
+<h2 id="keyrelease">keyrelease</h2>
+<div class="codehilite"><pre><span></span><span class="n">keyrelease</span><span class="p">(</span><span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Releases 'key' on the keyboard. You can access the int key values on MSDN.</p>
+<h2 id="setclipboard">setclipboard</h2>
+<div class="codehilite"><pre><span></span><span class="n">setclipboard</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets 'value' to the clipboard.</p>
+<h2 id="mouse2press">mouse2press</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse2press</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Clicks down on the right mouse button.</p>
+<h2 id="getsenv">getsenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">getsenv</span><span class="p">(</span><span class="o">&lt;</span><span class="n">LocalScript</span><span class="p">,</span> <span class="n">ModuleScript</span><span class="o">&gt;</span> <span class="n">Script</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the environment of Script. Returns nil if the script is not running.</p>
+<h2 id="checkcaller">checkcaller</h2>
+<div class="codehilite"><pre><span></span><span class="n">checkcaller</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns true if the current thread was made by Synapse. Useful for metatable hooks.</p>
+<h1 id="bit"><strong>bit</strong></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This has been deprecated in favor of Roblox's <strong>bit32</strong> library, which has the same functionality.</p>
+</div>
+<h2 id="bitbdiv">bit.bdiv</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bdiv</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">dividend</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">divisor</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Divides 'dividend' by 'divisor', remainder is not returned.</p>
+<h2 id="bitbadd">bit.badd</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">badd</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds 'a' with 'b', allows overflows (unlike normal Lua).</p>
+<h2 id="bitbadd_1">bit.badd</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bsub</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Subtracts 'a' with 'b', allows overflows (unlike normal Lua).</p>
+<h2 id="bitrshift">bit.rshift</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">rshift</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a right shift on 'val' using 'by'.</p>
+<h2 id="bitband">bit.band</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">band</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a logical AND (&amp;) on 'val' using 'by'.</p>
+<h2 id="bitbor">bit.bor</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bor</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a logical OR (|) on 'val' using 'by'.</p>
+<h2 id="bitbxor">bit.bxor</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bxor</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a logical XOR (^) on 'val' using 'by'.</p>
+<h2 id="bitbnot">bit.bnot</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bnot</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a logical NOT on 'val'.</p>
+<h2 id="bitbmul">bit.bmul</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bmul</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Multiplies 'val' using 'by', allows overflows (unlike normal Lua)</p>
+<h2 id="bitbswap">bit.bswap</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">bswap</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a bitwise swap on 'val'.</p>
+<h2 id="bittobit">bit.tobit</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">tobit</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Converts 'val' into proper form for bitwise operations.</p>
+<h2 id="bitror">bit.ror</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">ror</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Rotates right 'val' using 'by'.</p>
+<h2 id="bitlshift">bit.lshift</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">lshift</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">by</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Does a left shift on 'val' using 'by'.</p>
+<h2 id="bittohex">bit.tohex</h2>
+<div class="codehilite"><pre><span></span><span class="n">bit</span><span class="p">.</span><span class="n">tohex</span><span class="p">(</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Converts 'val' to a hex string.</p>
+<h1 id="debug"><strong>debug</strong></h1>
+<h2 id="debuggetconstant">debug.getconstant</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">getconstant</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the constant at index 'idx' in function 'fi' or level 'fi'.</p>
+<h2 id="debugprofilebegin">debug.profilebegin</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">profilebegin</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">label</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>Opens a microprofiler label.</p>
+<h2 id="debugprofileend">debug.profileend</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">profileend</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Closes the top microprofiler label.</p>
+<h2 id="debugtraceback">debug.traceback</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.traceback</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a traceback of the current stack as a string.</p>
+<h2 id="debuggetfenv">debug.getfenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">getfenv</span><span class="p">(</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">o</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the environment of object 'o'.</p>
+<h2 id="debuggetupvalue">debug.getupvalue</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.getupvalue</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">upval</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the upvalue with name 'upval' in function or level 'fi'.</p>
+<h2 id="debuggetlocals">debug.getlocals</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">getlocals</span><span class="p">(</span><span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">lvl</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a table containing the upvalues at level 'lvl'.</p>
+<h2 id="debugsetmetatable">debug.setmetatable</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.setmetatable</span><span class="p">(</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">o</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">mt</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Set the metatable of 'o' to 'mt'.</p>
+<h2 id="debuggetconstants">debug.getconstants</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">getconstants</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Retrieve the constants in function 'fi' or at level 'fi'.</p>
+<h2 id="debuggetupvalues">debug.getupvalues</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">getupvalues</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Retrieve the upvalues in function 'fi' or at level 'fi'.</p>
+<h2 id="debugsetupvalue">debug.setupvalue</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.setupvalue</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="n">indice</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Set upvalue at number 'indice' to value 'value' at level or function 'fi'.</p>
+<h2 id="debugsetupvalue_1">debug.setupvalue</h2>
+<div class="codehilite"><pre><span></span><span class="n">debug</span><span class="p">.</span><span class="n">setconstant</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">consname</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">int</span><span class="p">,</span> <span class="n">bool</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Set constant 'consname' to tuple 'value' at level or function 'fi'.</p>
+<h2 id="debuggetregistry">debug.getregistry</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.getregistry</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the lua registry</p>
+<h2 id="debuggetinfo">debug.getinfo</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.getinfo</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">,</span> <span class="nf">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a table of info pertaining to the Lua function 'fi'.</p>
+<h2 id="debuggetlocal">debug.getlocal</h2>
+<div class="codehilite"><pre><span></span><span class="nb">debug.getlocal</span><span class="p">(</span><span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">lvl</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="n">indice</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the local with number 'indice' in level 'lvl'.</p>
+<h2 id="debuggetstack">debug.getstack</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span><span class="o">&lt;</span><span class="n">Variant</span><span class="o">&gt;</span> <span class="n">debug</span><span class="p">.</span><span class="n">getstack</span><span class="p">(</span><span class="n">int</span> <span class="n">stackpos</span><span class="p">[,</span> <span class="n">int</span> <span class="n">index</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Returns the stack for the function at level 'stackpos'. Put index for a single value.</p>
+<h2 id="debugsetstack">debug.setstack</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">debug</span><span class="p">.</span><span class="n">setstack</span><span class="p">(</span><span class="n">int</span> <span class="n">stackpos</span><span class="p">,</span> <span class="n">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">Variant</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets stack at stackpos with index to value.</p>
+<h1 id="debug42proto">debug.*proto</h1>
+<p>The new debug.*proto functions are a new useful addition to the debug API that fixes a common problem in scripts: getting inner functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is not much documentation for these functions, but there are some examples of usage!</p>
+</div>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">wow</span> <span class="o">=</span> <span class="s2">&quot;same&quot;</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="kr">function</span> <span class="nf">asd</span><span class="p">()</span>
+        <span class="c1">--we want this function!</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">wow</span><span class="p">)</span>
+        <span class="n">wow</span> <span class="o">=</span> <span class="n">wow</span> <span class="o">..</span> <span class="s2">&quot;a&quot;</span>
+        <span class="nb">print</span><span class="s1">&#39;hello!&#39;</span>
+    <span class="kr">end</span>
+
+    <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;RunService&quot;</span><span class="p">).</span><span class="n">RenderStepped</span><span class="p">:</span><span class="n">Connect</span><span class="p">(</span><span class="n">asd</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+
+<p>While we can use getrenv() iteration since "asd" is connected as an event, lets say we got the 'test' function another way and we want to get 'asd'. This is a great usecase for the new debug API functions.</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">test</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">--found via some other method</span>
+
+<span class="kr">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="n">getprotos</span><span class="p">(</span><span class="n">test</span><span class="p">))</span> <span class="kr">do</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="c1">--1 function: XXXXXXXX</span>
+</pre></div>
+
+
+<p>As we can see, we now have the function! There is a catch though - this function is deactivated. We can get the constants (and decompile it once LuaU decompilation is complete), but we cannot call it or get any upvalues. In order to do that, we have to get an activated version of this function instead.
+Lets try to get an activated version instead.</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">test</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">--found via some other method</span>
+
+<span class="c1">--1 is the index of the function we want to get (the first one in this case), and the &#39;true&#39; specifies to find activated functions.</span>
+<span class="kr">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="n">getproto</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span> <span class="kr">do</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">())</span> <span class="c1">--We can call it this time...</span>
+    <span class="n">table</span><span class="p">.</span><span class="n">foreach</span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="n">getupvalues</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">warn</span><span class="p">)</span> <span class="c1">--..and get upvalues!</span>
+<span class="kr">end</span>
+</pre></div>
+
+
+<h2 id="loadfile">loadfile</h2>
+<div class="codehilite"><pre><span></span><span class="nb">loadfile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Loads in the contents of a file as a chunk and returns it if compilation is successful. Otherwise, if an error has occured during compilation, nil followed by the error message will be returned.</p>
+<h2 id="loadstring">loadstring</h2>
+<div class="codehilite"><pre><span></span><span class="n">loadstring</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">chunk</span><span class="p">,</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">chunkname</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Loads 'chunk' as a Lua function and returns it if compilation is succesful. Otherwise, if an error has occured during compilation, nil followed by the error message will be returned.</p>
+<h2 id="writefile">writefile</h2>
+<div class="codehilite"><pre><span></span><span class="n">writefile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">filepath</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Writes 'contents' to the supplied filepath.</p>
+<h2 id="mousescroll">mousescroll</h2>
+<div class="codehilite"><pre><span></span><span class="n">mousescroll</span><span class="p">(</span><span class="o">&lt;</span><span class="n">signed</span> <span class="n">int</span><span class="o">&gt;</span> <span class="n">px</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Scrolls the mouse wheel virtually by 'px' pixels.</p>
+<h2 id="mouse2click">mouse2click</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse2click</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Virtually presses the right mouse button.</p>
+<h2 id="islclosure">islclosure</h2>
+<div class="codehilite"><pre><span></span><span class="n">islclosure</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns true if 'f' is an LClosure</p>
+<h2 id="mouse1press">mouse1press</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse1press</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simulates a left mouse button press without releasing it.</p>
+<h2 id="mouse1release">mouse1release</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse1release</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simulates a left mouse button release.</p>
+<h2 id="keypress">keypress</h2>
+<div class="codehilite"><pre><span></span><span class="n">keypress</span><span class="p">(</span><span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">keycode</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simulates a key press for the specified <a href="https://docs.microsoft.com/en-us/windows/desktop/inputdev/virtual-key-codes">keycode</a></p>
+<h2 id="mouse2release">mouse2release</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse2release</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simulates a right mouse button release.</p>
+<h2 id="newcclosure">newcclosure</h2>
+<div class="codehilite"><pre><span></span><span class="n">newcclosure</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Pushes a new c closure that invokes function 'f' upon call. Used for metatable hooks.</p>
+<h2 id="getinstances">getinstances</h2>
+<div class="codehilite"><pre><span></span><span class="n">getinstances</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a list of all instances within the game.</p>
+<h2 id="getnilinstances">getnilinstances</h2>
+<div class="codehilite"><pre><span></span><span class="n">getnilinstances</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a list of all instances parented to nil within the game.</p>
+<h2 id="readfile">readfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">readfile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Reads the contents of the file located at 'path' and returns it. If the file does not exist, it errors.</p>
+<h2 id="getscripts">getscripts</h2>
+<div class="codehilite"><pre><span></span><span class="n">getscripts</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a list of all scripts within the game.</p>
+<h2 id="getrunningscripts">getrunningscripts</h2>
+<div class="codehilite"><pre><span></span><span class="n">getrunningscripts</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a list of all scripts currently running.</p>
+<h2 id="appendfile">appendfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">appendfile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Appends 'content' to the file contents at 'path'. If the file does not exist, it errors</p>
+<h2 id="listfiles">listfiles</h2>
+<div class="codehilite"><pre><span></span><span class="n">listfiles</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">folder</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a table of files in 'folder'.</p>
+<h2 id="isfile">isfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">isfile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns if 'path' is a file or not.</p>
+<h2 id="isfolder">isfolder</h2>
+<div class="codehilite"><pre><span></span><span class="n">isfolder</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns if 'path' is a folder or not.</p>
+<h2 id="delfolder">delfolder</h2>
+<div class="codehilite"><pre><span></span><span class="n">delfolder</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Deletes 'folder' in the workspace directory.</p>
+<h2 id="delfile">delfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">delfile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Deletes 'file' from the workspace directory.</p>
+<h2 id="getreg">getreg</h2>
+<div class="codehilite"><pre><span></span><span class="n">getreg</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the Lua registry.</p>
+<h2 id="getgc">getgc</h2>
+<div class="codehilite"><pre><span></span><span class="n">getgc</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a copy of the Lua GC list.</p>
+<h2 id="mouse1click">mouse1click</h2>
+<div class="codehilite"><pre><span></span><span class="n">mouse1click</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simulates a full left mouse button press.</p>
+<h2 id="getrawmetatable">getrawmetatable</h2>
+<div class="codehilite"><pre><span></span><span class="n">getrawmetatable</span><span class="p">(</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Retrieve the metatable of value irregardless of value's metatable's __metatable field. Returns nil if it doesn't exist.</p>
+<h2 id="setreadonly">setreadonly</h2>
+<div class="codehilite"><pre><span></span><span class="n">setreadonly</span><span class="p">(</span><span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">table</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="n">ro</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets table's read-only value to ro</p>
+<h2 id="isreadonly">isreadonly</h2>
+<div class="codehilite"><pre><span></span><span class="n">isreadonly</span><span class="p">(</span><span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">table</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns table's read-only condition.</p>
+<h2 id="getrenv">getrenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">getrenv</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the global Roblox environment for the LocalScript state.</p>
+<h2 id="decompile">decompile</h2>
+<div class="codehilite"><pre><span></span><span class="n">decompile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">LocalScript</span><span class="p">,</span> <span class="n">ModuleScript</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">Script</span><span class="p">,</span> <span class="n">bool</span> <span class="n">Bytecode</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Decompiles Script and returns the decompiled script. If the decompilation fails, then the return value will be an error message.</p>
+<h2 id="dumpstring">dumpstring</h2>
+<div class="codehilite"><pre><span></span><span class="n">dumpstring</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">Script</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the Roblox formatted bytecode for source string 'Script'.</p>
+<h2 id="getloadedmodules">getloadedmodules</h2>
+<div class="codehilite"><pre><span></span><span class="n">getloadedmodules</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns all ModuleScripts loaded in the game.</p>
+<h2 id="isrbxactive">isrbxactive</h2>
+<div class="codehilite"><pre><span></span><span class="n">isrbxactive</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns if the Roblox window is in focus.</p>
+<h2 id="getcallingscript">getcallingscript</h2>
+<div class="codehilite"><pre><span></span><span class="n">getcallingscript</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Gets the script that is calling this function.</p>
+<h2 id="getspecialinfo">getspecialinfo</h2>
+<div class="codehilite"><pre><span></span><span class="n">getspecialinfo</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Gets a list of special properties for MeshParts, UnionOperations, and Terrain.</p>
+<h2 id="messagebox">messagebox</h2>
+<div class="codehilite"><pre><span></span><span class="n">messagebox</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">title</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Makes a MessageBox with 'message', 'title', and 'options' as options. See <a href="https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-messagebox">this article</a> for more information.</p>
+<h2 id="messageboxasync">messageboxasync</h2>
+<div class="codehilite"><pre><span></span><span class="n">messageboxasync</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">title</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Makes a MessageBox with 'message', 'title', and 'options' as options. Runs asynchronously. See <a href="https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-messagebox">this article</a> for more information.</p>
+<h2 id="rconsolename">rconsolename</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsolename</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">title</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets the currently allocated console title to 'title'.</p>
+<h2 id="rconsoleinput">rconsoleinput</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsoleinput</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Yields until the user inputs information into ther console. Returns the input the user put in.</p>
+<h2 id="rconsoleinputasync">rconsoleinputasync</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsoleinputasync</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Yields until the user inputs information into ther console. Returns the input the user put in.</p>
+<h2 id="rconsoleprint">rconsoleprint</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsoleprint</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints 'message' into the console.</p>
+<h2 id="rconsoleinfo">rconsoleinfo</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsoleinfo</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints 'message' into the console, with a info text before it.</p>
+<h2 id="rconsolewarn">rconsolewarn</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsolewarn</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints 'message' into the console, with a warning text before it.</p>
+<h2 id="rconsoleerr">rconsoleerr</h2>
+<div class="codehilite"><pre><span></span><span class="n">rconsoleerr</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints 'message' into the console, with a error text before it.</p>
+<h2 id="fireclickdetector">fireclickdetector</h2>
+<div class="codehilite"><pre><span></span><span class="n">fireclickdetector</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ClickDetector</span><span class="o">&gt;</span> <span class="n">detector</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="kc">nil</span><span class="o">&gt;</span> <span class="n">distance</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Fires click detector 'detector' with 'distance'. If a distance is not provided, it will be 0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>firetouchinterest, getconnections and some other functions are currently broken and will crash when attempting to call them. These functions will hopefully be fixed in the future.</p>
+</div>
+<h2 id="getconnections">getconnections</h2>
+<div class="codehilite"><pre><span></span><span class="n">getconnections</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Signal</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Gets a list of connections to the specified signal. You can then use :Disable and :Enable on the connections to disable/enable them.</p>
+<h2 id="firetouchinterest">firetouchinterest</h2>
+<div class="codehilite"><pre><span></span><span class="n">firetouchinterest</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Part</span><span class="o">&gt;</span> <span class="n">part</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">TouchTransmitter</span><span class="o">&gt;</span> <span class="n">transmitter</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="n">toggle</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Fires touch 'transmitter' with 'part'. Use 0 to toggle it being touched, 1 for it not being toggled.</p>
+<h2 id="saveinstance">saveinstance</h2>
+<div class="codehilite"><pre><span></span><span class="n">saveinstance</span><span class="p">(</span><span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Saves the Roblox game into your workspace folder.</p>
+<h1 id="syn"><strong>syn</strong></h1>
+<h2 id="syncryptencrypt">syn.crypt.encrypt</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">crypt</span><span class="p">.</span><span class="n">encrypt</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Encrypt's data with key.</p>
+<h2 id="syncryptdecrypt">syn.crypt.decrypt</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">crypt</span><span class="p">.</span><span class="n">decrypt</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Decrypt's data with key.</p>
+<h2 id="syncryptdecrypt_1">syn.crypt.decrypt</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">crypt</span><span class="p">.</span><span class="n">hash</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Hashes data.</p>
+<h2 id="syncryptbase64encode">syn.crypt.base64.encode</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">crypt</span><span class="p">.</span><span class="n">base64</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Encodes data with base64.</p>
+<h2 id="syncryptbase64encode_1">syn.crypt.base64.encode</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">crypt</span><span class="p">.</span><span class="n">base64</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Decodes data with base64.</p>
+<h2 id="syncache_replace">syn.cache_replace</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">cache_replace</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span> <span class="n">t_obj</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Replace obj in the cache with t_obj.</p>
+<h2 id="syninvalidate_cache">syn.invalidate_cache</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">cache_invalidate</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Invalidate obj's cache entry, forcing a recache upon the next lookup.</p>
+<h2 id="synset_thread_identity">syn.set_thread_identity</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">set_thread_identity</span><span class="p">(</span><span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets the current thread identity after a Task Scheduler cycle is performed. (call wait() after invoking this function for the expected results)</p>
+<h2 id="synget_thread_identity">syn.get_thread_identity</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">get_thread_identity</span><span class="p">(</span><span class="o">&lt;</span><span class="n">void</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the current thread identity.</p>
+<h2 id="synwrite_clipboard">syn.write_clipboard</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">write_clipboard</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Writes 'content' to the current Windows clipboard.</p>
+<h2 id="synrequest">syn.request</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">syn</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Functions similarly to <a href="https://developer.roblox.com/en-us/api-reference/function/HttpService/RequestAsync">HttpService:RequestAsync</a></p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example:</span>
+<span class="kd">local</span> <span class="n">response</span> <span class="o">=</span> <span class="n">syn</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">Url</span> <span class="o">=</span> <span class="s2">&quot;http://httpbin.org/post&quot;</span><span class="p">,</span>  <span class="c1">-- This website helps debug HTTP requests</span>
+        <span class="n">Method</span> <span class="o">=</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+        <span class="n">Headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">[</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;application/json&quot;</span>  <span class="c1">-- When sending JSON, set this!</span>
+        <span class="p">},</span>
+        <span class="n">Body</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;HttpService&quot;</span><span class="p">):</span><span class="n">JSONEncode</span><span class="p">({</span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span><span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="kr">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="kr">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;table&quot;</span> <span class="kr">then</span>
+        <span class="kr">for</span> <span class="n">i2</span><span class="p">,</span><span class="n">v2</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="kr">do</span>
+            <span class="n">warn</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">v2</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div>
+
+
+<h2 id="synqueue_on_teleport">syn.queue_on_teleport</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">queue_on_teleport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">script</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Allows you to queue a script for execution after you teleport to a new server.
+Displays a warning in the developer console if there is a syntax error.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">queue_on_teleport</span><span class="p">(</span><span class="s2">&quot;print&#39;this will be printed after you TP&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="synopen_web_socket">syn.open_web_socket</h2>
+<div class="codehilite"><pre><span></span><span class="n">syn</span><span class="p">.</span><span class="n">open_web_socket</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Open's the Synapse WebSocket with channel name. This function will not exist if the user did not enable WebSocket support in theme.json.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../ProtoSmasher/Libraries/websocket/" title="WebSocket" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                WebSocket
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

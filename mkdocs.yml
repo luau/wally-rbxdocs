@@ -1,0 +1,16 @@
+site_name: Exploit Documentation
+repo_name: 'Exploit Documentation'
+repo_url: 'https://github.com/wally-rblx/Rbx-Exploit-Docs'
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
+markdown_extensions:
+  - codehilite
+  - admonition

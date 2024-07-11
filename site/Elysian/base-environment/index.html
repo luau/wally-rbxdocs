@@ -1,0 +1,1940 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Base Environment - Exploit Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#base-environment" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Exploit Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Exploit Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Base Environment
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Exploit Documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Exploit Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Exploit Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Exploit Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome!" class="md-nav__link">
+      Welcome!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Elysian
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Elysian
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Base Environment
+      </label>
+    
+    <a href="./" title="Base Environment" class="md-nav__link md-nav__link--active">
+      Base Environment
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getrawmetatable" class="md-nav__link">
+    getrawmetatable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setrawmetatable" class="md-nav__link">
+    setrawmetatable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isreadonly" class="md-nav__link">
+    isreadonly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printconsole" class="md-nav__link">
+    printconsole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printdebug" class="md-nav__link">
+    printdebug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getobjects" class="md-nav__link">
+    getobjects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readfile" class="md-nav__link">
+    readfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadfile" class="md-nav__link">
+    loadfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgenv" class="md-nav__link">
+    getgenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getrenv" class="md-nav__link">
+    getrenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clipboardset" class="md-nav__link">
+    Clipboard.set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1press" class="md-nav__link">
+    mouse1press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1release" class="md-nav__link">
+    mouse1release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1click" class="md-nav__link">
+    mouse1click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2press" class="md-nav__link">
+    mouse2press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2release" class="md-nav__link">
+    mouse2release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2click" class="md-nav__link">
+    mouse2click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keypress" class="md-nav__link">
+    keypress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyrelease" class="md-nav__link">
+    keyrelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousemove" class="md-nav__link">
+    mousemove
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousemoverel" class="md-nav__link">
+    mousemoverel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousescroll" class="md-nav__link">
+    mousescroll
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writefile" class="md-nav__link">
+    writefile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendfile" class="md-nav__link">
+    appendfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saveinstance" class="md-nav__link">
+    saveinstance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saveplace" class="md-nav__link">
+    saveplace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompile" class="md-nav__link">
+    decompile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompile_1" class="md-nav__link">
+    decompile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkcaller" class="md-nav__link">
+    checkcaller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setfflag" class="md-nav__link">
+    setfflag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getreg" class="md-nav__link">
+    getreg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnilinstances" class="md-nav__link">
+    getnilinstances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elysianexecute" class="md-nav__link">
+    elysianexecute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newcclosure" class="md-nav__link">
+    newcclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaceclosure" class="md-nav__link">
+    replaceclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoreclosure" class="md-nav__link">
+    restoreclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-library" class="md-nav__link">
+    bit library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getallthreads" class="md-nav__link">
+    getallthreads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getthreadobject" class="md-nav__link">
+    getthreadobject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettenv" class="md-nav__link">
+    gettenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsenv" class="md-nav__link">
+    getsenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getlocals" class="md-nav__link">
+    getlocals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setlocal" class="md-nav__link">
+    setlocal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getupvals" class="md-nav__link">
+    getupvals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setupval" class="md-nav__link">
+    setupval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getconsts" class="md-nav__link">
+    getconsts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setconst" class="md-nav__link">
+    setconst
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgc" class="md-nav__link">
+    getgc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islclosure" class="md-nav__link">
+    islclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gethui" class="md-nav__link">
+    gethui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getbspval" class="md-nav__link">
+    getbspval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnspval" class="md-nav__link">
+    getnspval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getunionassetid" class="md-nav__link">
+    getunionassetid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getconnections" class="md-nav__link">
+    getconnections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isluau" class="md-nav__link">
+    isluau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnamecallmethod" class="md-nav__link">
+    getnamecallmethod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luau" class="md-nav__link">
+    Luau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elysian-support-v330-developer-notes" class="md-nav__link">
+    Elysian Support (v3.3.0+) &amp; Developer Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbxscriptsignal-extensions" class="md-nav__link">
+    RBXScriptSignal Extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbxscriptconnection-extensions" class="md-nav__link">
+    RBXScriptConnection Extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      ProtoSmasher
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        ProtoSmasher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/base-environment/" title="Base Environment" class="md-nav__link">
+      Base Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/constants/" title="Constants" class="md-nav__link">
+      Constants
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Libraries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Libraries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/aes/" title="AES" class="md-nav__link">
+      AES
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/base64/" title="Base64" class="md-nav__link">
+      Base64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/bit/" title="Bit" class="md-nav__link">
+      Bit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/debug/" title="Debug" class="md-nav__link">
+      Debug
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/drawing/" title="Drawing" class="md-nav__link">
+      Drawing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/input/" title="Input" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ProtoSmasher/Libraries/websocket/" title="WebSocket" class="md-nav__link">
+      WebSocket
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Synapse X
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Synapse X
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Synapse X/base-environment/" title="Base Environment" class="md-nav__link">
+      Base Environment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getrawmetatable" class="md-nav__link">
+    getrawmetatable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setrawmetatable" class="md-nav__link">
+    setrawmetatable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isreadonly" class="md-nav__link">
+    isreadonly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printconsole" class="md-nav__link">
+    printconsole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printdebug" class="md-nav__link">
+    printdebug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getobjects" class="md-nav__link">
+    getobjects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readfile" class="md-nav__link">
+    readfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadfile" class="md-nav__link">
+    loadfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgenv" class="md-nav__link">
+    getgenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getrenv" class="md-nav__link">
+    getrenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clipboardset" class="md-nav__link">
+    Clipboard.set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1press" class="md-nav__link">
+    mouse1press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1release" class="md-nav__link">
+    mouse1release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse1click" class="md-nav__link">
+    mouse1click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2press" class="md-nav__link">
+    mouse2press
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2release" class="md-nav__link">
+    mouse2release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse2click" class="md-nav__link">
+    mouse2click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keypress" class="md-nav__link">
+    keypress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyrelease" class="md-nav__link">
+    keyrelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousemove" class="md-nav__link">
+    mousemove
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousemoverel" class="md-nav__link">
+    mousemoverel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mousescroll" class="md-nav__link">
+    mousescroll
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writefile" class="md-nav__link">
+    writefile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendfile" class="md-nav__link">
+    appendfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saveinstance" class="md-nav__link">
+    saveinstance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saveplace" class="md-nav__link">
+    saveplace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompile" class="md-nav__link">
+    decompile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompile_1" class="md-nav__link">
+    decompile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkcaller" class="md-nav__link">
+    checkcaller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setfflag" class="md-nav__link">
+    setfflag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getreg" class="md-nav__link">
+    getreg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnilinstances" class="md-nav__link">
+    getnilinstances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elysianexecute" class="md-nav__link">
+    elysianexecute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newcclosure" class="md-nav__link">
+    newcclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaceclosure" class="md-nav__link">
+    replaceclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoreclosure" class="md-nav__link">
+    restoreclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-library" class="md-nav__link">
+    bit library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getallthreads" class="md-nav__link">
+    getallthreads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getthreadobject" class="md-nav__link">
+    getthreadobject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettenv" class="md-nav__link">
+    gettenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsenv" class="md-nav__link">
+    getsenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getlocals" class="md-nav__link">
+    getlocals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setlocal" class="md-nav__link">
+    setlocal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getupvals" class="md-nav__link">
+    getupvals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setupval" class="md-nav__link">
+    setupval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getconsts" class="md-nav__link">
+    getconsts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setconst" class="md-nav__link">
+    setconst
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgc" class="md-nav__link">
+    getgc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islclosure" class="md-nav__link">
+    islclosure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gethui" class="md-nav__link">
+    gethui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getbspval" class="md-nav__link">
+    getbspval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnspval" class="md-nav__link">
+    getnspval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getunionassetid" class="md-nav__link">
+    getunionassetid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getconnections" class="md-nav__link">
+    getconnections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isluau" class="md-nav__link">
+    isluau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getnamecallmethod" class="md-nav__link">
+    getnamecallmethod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luau" class="md-nav__link">
+    Luau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elysian-support-v330-developer-notes" class="md-nav__link">
+    Elysian Support (v3.3.0+) &amp; Developer Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbxscriptsignal-extensions" class="md-nav__link">
+    RBXScriptSignal Extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbxscriptconnection-extensions" class="md-nav__link">
+    RBXScriptConnection Extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wally-rblx/Rbx-Exploit-Docs/edit/master/docs/Elysian/base-environment.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="base-environment">Base Environment</h1>
+<h2 id="getrawmetatable">getrawmetatable</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getrawmetatable</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">table</span><span class="p">,</span> <span class="n">userdata</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the metatable from a table or userdata, even if it is locked.</p>
+<h2 id="setrawmetatable">setrawmetatable</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">setrawmetatable</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">table</span><span class="p">,</span> <span class="n">userdata</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">,</span> <span class="n">table</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets the metatable of a table or userdata, even if it is locked.</p>
+<h2 id="isreadonly">isreadonly</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">isreadonly</span><span class="p">(</span><span class="n">table</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns true if the table is read-only.</p>
+<h2 id="printconsole">printconsole</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">printconsole</span><span class="p">(</span><span class="n">string</span> <span class="n">val</span> <span class="p">[,</span> <span class="n">number</span> <span class="n">r</span><span class="p">,</span> <span class="n">number</span> <span class="n">g</span><span class="p">,</span> <span class="n">number</span> <span class="n">b</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Prints <code>val</code> to Elysian’s console with color <code>r, g, b</code>. Default color is <code>0, 0, 200</code>.</p>
+<h2 id="printdebug">printdebug</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">printdebug</span><span class="p">(</span><span class="n">string</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints <code>val</code> to the console (View-&gt;Console-&gt;Toggle)</p>
+<h2 id="getobjects">getobjects</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">getobjects</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Internal function used by DataModel::GetObjects (see init.lua)</p>
+<h2 id="readfile">readfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">readfile</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the contents of a file in the workspace folder</p>
+<h2 id="loadfile">loadfile</h2>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">loadfile</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Loads a file from the workspace folder. Returns nil and an error on error. Similar to executing <code>loadstring(readfile(filename))</code>.</p>
+<h2 id="getgenv">getgenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getgenv</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns the global environment for Elysian.</p>
+<h2 id="getrenv">getrenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getrenv</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns the global environment for game scripts.</p>
+<h2 id="clipboardset">Clipboard.set</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">Clipboard</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">string</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets the contents of the clipboard to <code>data</code>.</p>
+<h2 id="mouse1press">mouse1press</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse1press</span><span class="p">([</span><span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Presses the left mouse button.</p>
+<h2 id="mouse1release">mouse1release</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse1release</span><span class="p">([</span><span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Releases the left mouse button.</p>
+<h2 id="mouse1click">mouse1click</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse1click</span><span class="p">([</span><span class="n">number</span> <span class="n">delay</span><span class="p">,</span> <span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Clicks the left mouse button with an optional delay in between press and release. Delay default is ~0.03 seconds.</p>
+<h2 id="mouse2press">mouse2press</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse2press</span><span class="p">([</span><span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Presses the right mouse button.</p>
+<h2 id="mouse2release">mouse2release</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse2release</span><span class="p">([</span><span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span><span class="err">\</span>
+</pre></div>
+
+
+<p>Releases the right mouse button.</p>
+<h2 id="mouse2click">mouse2click</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mouse2click</span><span class="p">([</span><span class="n">number</span> <span class="n">delay</span><span class="p">,</span> <span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Clicks the right mouse button with an optional delay in between press and release. Delay default is ~0.03 seconds.</p>
+<h2 id="keypress">keypress</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">keypress</span><span class="p">(</span><span class="n">KeyCode</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Presses a key. If a number is passed for <code>key</code>, Elysian will interpret it as a <a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">virtual key code</a> and attempt to convert it to a <a href="https://developer.roblox.com/en-us/api-reference/enum/KeyCode">KeyCode</a> for compatibility with scripts created for older versions of Elysian.</p>
+<h2 id="keyrelease">keyrelease</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">keyrelease</span><span class="p">(</span><span class="n">KeyCode</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Releases a key. If a number is passed for key, Elysian will interpret it as a virtual key code. See <a href="../base-environment/#keypress">keypress</a>.</p>
+<h2 id="mousemove">mousemove</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mousemove</span><span class="p">(</span><span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span> <span class="p">[,</span> <span class="n">number</span> <span class="n">dx</span><span class="p">,</span> <span class="n">number</span> <span class="n">dy</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Moves the cursor to a location inside Roblox’s window. <code>dx</code> and <code>dy</code> are optional mouse delta parameters to be sent to Roblox. If not provided, they are equivalent to <code>x - current_mouse_position.X</code> and <code>y - current_mouse_position.Y</code> respectively.</p>
+<h2 id="mousemoverel">mousemoverel</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mousemoverel</span><span class="p">(</span><span class="n">number</span> <span class="n">dx</span><span class="p">,</span> <span class="n">number</span> <span class="n">dy</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Moves the cursor relatively.</p>
+<h2 id="mousescroll">mousescroll</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">mousescroll</span><span class="p">(</span><span class="n">boolean</span> <span class="n">forward</span> <span class="p">[,</span> <span class="n">number</span> <span class="n">x</span><span class="p">,</span> <span class="n">number</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Scrolls the mouse. For compatibility with scripts created for older versions of Elysian, a number can be passed to <code>forward</code> where a positive number scrolls the mouse up, a negative number scrolls the mouse down, and one scroll “click” is equal to 120.</p>
+<h2 id="writefile">writefile</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">writefile</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">,</span> <span class="n">string</span> <span class="n">data</span> <span class="p">[,</span> <span class="n">boolean</span> <span class="n">binary</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will fail if attempting to access an outside directory.</p>
+</div>
+<h2 id="appendfile">appendfile</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">appendfile</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">,</span> <span class="n">string</span> <span class="n">data</span> <span class="p">[,</span> <span class="n">boolean</span> <span class="n">binary</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Appends data to a file in the workspace folder. Returns true if successful.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will fail if attempting to access an outside directory.</p>
+</div>
+<h2 id="saveinstance">saveinstance</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">saveinstance</span><span class="p">(</span><span class="n">Instance</span> <span class="n">instance</span><span class="p">,</span> <span class="n">string</span> <span class="n">name</span> <span class="p">[,</span> <span class="n">table</span> <span class="n">options</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Saves an instance to a file in the workspace folder which can be later opened in Roblox Studio. Possible options (and their default values) can be seen below:</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">defaultSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">DecompileMode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- 0 = don&#39;t decompile scripts, 1 = luadec, 2 = unluac</span>
+    <span class="n">NilInstances</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- save nil instances</span>
+    <span class="n">RemovePlayers</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- ignore players</span>
+    <span class="n">SavePlayerDescendants</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">DecompileTimeout</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">-- unluac only</span>
+    <span class="n">UnluacMaxThreads</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">-- the max number of java processes that should be running at one time (the higher this value is the faster the decompilation process)</span>
+    <span class="n">DecompileIgnore</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;StarterPlayer&quot;</span><span class="p">,</span><span class="s2">&quot;Chat&quot;</span><span class="p">}</span> <span class="c1">-- scripts inside these services are saved but not decompiled</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="saveplace">saveplace</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">saveplace</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span> <span class="p">[,</span> <span class="n">table</span> <span class="n">options</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Equivalent to <code>saveinstance(game, name, options)</code></p>
+<h2 id="decompile">decompile</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">decompile</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">Instance</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">script</span> <span class="p">[,</span> <span class="n">string</span> <span class="n">option</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Attempts to decompile <code>script</code> and returns the result. If <code>option</code> is provided and equal to “dump”, lua bytecode will be returned (similar to string.dump). It should be noted that due to Roblox’s changes to Lua’s VM and parser this bytecode is not reliable to use with unmodified decompilers. Returns nil and an error message on error.</p>
+<h2 id="decompile_1">decompile</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">decompile</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">Instance</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">script</span><span class="p">,</span> <span class="err">“</span><span class="n">unluac</span><span class="err">”</span><span class="p">,</span> <span class="kr">function</span> <span class="nf">callback</span><span class="p">(</span><span class="n">string</span> <span class="n">result</span><span class="p">,</span> <span class="n">string</span> <span class="nb">error</span><span class="p">),</span> <span class="n">number</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+<p>If <code>option</code> is provided and equal to “unluac”, decompile decompiles with unluac. If invalid parameters are passed, nil and an error is returned. If not, decompile returns with true and a (Windows) thread is created that spawns a java process and waits for its output. Once the process ends, the callback is called with the result. If Java is not installed or another error occurs, the callback is called with nil and the error. </p>
+<div class="admonition danger">
+<p class="admonition-title">WARNING: A new java process is created every time this function is called. Calling decompile too quickly or in excessive amounts may cause some java processes to hang or exhaust your computer of resources.</p>
+</div>
+<h2 id="checkcaller">checkcaller</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">checkcaller</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns true if the function calling the function calling checkcaller is an Elysian function.</p>
+<h2 id="setfflag">setfflag</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">setfflag</span><span class="p">(</span><span class="n">string</span> <span class="n">fflag</span><span class="p">,</span> <span class="n">string</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets a FFlag’s value. Returns true if the flag was set succesfully or false if the flag doesn’t exist.</p>
+<h2 id="getreg">getreg</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getreg</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns Lua’s registry <a href="https://www.lua.org/pil/27.3.2.html">(LUA_REGISTRYINDEX)</a></p>
+<h2 id="getnilinstances">getnilinstances</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getnilinstances</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns a list of nil instances.</p>
+<h2 id="elysianexecute">elysianexecute</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">elysianexecute</span><span class="p">(</span><span class="n">string</span> <span class="n">script</span> <span class="p">[,</span> <span class="n">Instance</span> <span class="n">localscript</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Equivalent to executing a script through Elysian’s interface (pressing the execute button, etc). If <code>localscript</code> is provided, the script will be binded/linked to that instance. If not present, a new LocalScript will be created.</p>
+<h2 id="newcclosure">newcclosure</h2>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">newcclosure</span><span class="p">(</span><span class="kr">function</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Disguises Lua function <code>f</code> as a C function. It is seen as a C function by other scripts and any errors thrown inside <code>f</code> are viewed as coming from the C function, not <code>f</code> (in other words, the existence of f can not be detected by viewing the error message, stack trace, or etc.). <code>f</code> is allowed to yield ( e.g. wait() ) but will resume outside of the function.</p>
+<h2 id="replaceclosure">replaceclosure</h2>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">replaceclosure</span><span class="p">(</span><span class="kr">function</span> <span class="nf">target</span><span class="p">,</span> <span class="kr">function</span> <span class="nf">replacement</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Replaces a function with another function and returns a clone of the original. Once a function is replaced it cannot be replaced with any other function except for its clone/original. For a better understanding, see <a href="https://pastebin.com/raw/nJSKgYX4">this</a> code. </p>
+<div class="admonition danger">
+<p class="admonition-title">It should be noted that Lua doesn’t like people modifying internal structures and improper or extensive use of this function may cause unexpected crashes or other issues.</p>
+</div>
+<h2 id="restoreclosure">restoreclosure</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">restoreclosure</span><span class="p">(</span><span class="kr">function</span> <span class="nf">target</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Restores a closure that has been overwritten with <a href="../base-environment/#replaceclosure">replaceclosure</a>. Returns false if the function has not been replaced.</p>
+<h2 id="bit-library">bit library</h2>
+<div class="codehilite"><pre><span></span><span class="n">functions</span><span class="p">:</span> <span class="n">bit</span><span class="p">.</span><span class="n">tobit</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">tohex</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">bnot</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">band</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">bor</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">bxor</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">lshift</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">rshift</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">arshift</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">rol</span><span class="p">,</span> <span class="n">bit</span><span class="p">.</span><span class="n">ror</span>
+</pre></div>
+
+
+<p>Attempts to replicate <a href="http://bitop.luajit.org/api.html">LuaJIT’s bit library</a>.</p>
+<p>Superseded by Roblox's <strong>bit32</strong> library.</p>
+<h2 id="getallthreads">getallthreads</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getallthreads</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns an array of all existing Lua threads.</p>
+<h2 id="getthreadobject">getthreadobject</h2>
+<div class="codehilite"><pre><span></span><span class="n">Instance</span> <span class="n">getthreadobject</span><span class="p">([</span><span class="n">thread</span> <span class="n">t</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Returns the script associated with a Lua thread. If <code>t</code> is not provided, the current thread is used.</p>
+<h2 id="gettenv">gettenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">gettenv</span><span class="p">([</span><span class="n">thread</span> <span class="n">t</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Returns a thread’s environment. If <code>t</code> is not provided, the current thread is used.</p>
+<h2 id="getsenv">getsenv</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getsenv</span><span class="p">(</span><span class="n">Instance</span> <span class="n">script</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Searches for a thread associated with <code>script</code> and returns its environment (see init.lua for implementation).</p>
+<h2 id="getlocals">getlocals</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getlocals</span><span class="p">(</span><span class="n">number</span> <span class="n">level</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a Lua function’s local variables. The level parameter represents a function on the callstack, where 1 is the function calling getlocals, 2 is the function calling that function, and so on. The level provided cannot point to an Elysian or C function.</p>
+<p>In <a href="../base-environment/#Luau">Luau-enabled games</a>, getlocals returns the function’s stack as an array instead of a dictionary of local names to local variables.</p>
+<h2 id="setlocal">setlocal</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">setlocal</span><span class="p">(</span><span class="n">number</span> <span class="n">level</span><span class="p">,</span> <span class="n">string</span> <span class="n">i</span><span class="p">,</span> <span class="n">variant</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets local variable <code>i</code> to value <code>v</code> in the function pointed to by level (see <a href="../base-environment/#getlocals">getlocals</a>). Like getlocals, the function cannot be an Elysian or C function. Returns true if the variable was set successfully.</p>
+<p>In <a href="../base-environment/#Luau">Luau-enabled games</a>, setlocal requires an integer index for i instead of a string.</p>
+<h2 id="getupvals">getupvals</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getupvals</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a Lua function’s upvalues. If a number is passed for f, it is interpreted as a level (see <a href="../base-environment/#getlocals">getlocals</a> and <a href="../base-environment/#setlocal">setlocal</a>). The function cannot be an Elysian or C function.</p>
+<p>In <a href="../base-environment/#Luau">Luau-enabled games</a>, getupvals returns the function’s upvalues as an array instead of a dictionary of upvalue names to upvalues.</p>
+<h2 id="setupval">setupval</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">setupval</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">,</span> <span class="n">string</span> <span class="n">i</span><span class="p">,</span> <span class="n">variant</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets upvalue i to value v in function f. If a number is passed for f, it is interpreted as a level (see <a href="../base-environment/#getlocals">getlocals</a> and <a href="../base-environment/#setlocal">setlocal</a>). The function cannot be an Elysian or C function. Returns true if the upvalue was set successfully.</p>
+<p>In <a href="../base-environment/#Luau">Luau-enabled games</a>, setupval requires an integer index for i instead of a string.</p>
+<h2 id="getconsts">getconsts</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getconsts</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a Lua function’s constants. If a number is passed for f, it is interpreted as a level.</p>
+<h2 id="setconst">setconst</h2>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">setconst</span><span class="p">(</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="kr">function</span><span class="err">&gt;</span> <span class="nf">f</span><span class="p">,</span> <span class="n">number</span> <span class="n">i</span><span class="p">,</span> <span class="n">variant</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sets constant number <code>i</code> to value <code>v</code> in function f. If a number is passed for <code>f</code>, it is interpreted as a level.</p>
+<h2 id="getgc">getgc</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getgc</span><span class="p">([</span><span class="n">boolean</span> <span class="n">nomt</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Returns an array of all existing allocated objects in Lua. This includes strings, functions, threads, userdata, and more across all Roblox and Elysian scripts. Unless nomt is set, the returned table has a metatable with <a href="http://www.lua.org/manual/5.1/manual.html#2.10.2">__mode set to “v”</a>.</p>
+<h2 id="islclosure">islclosure</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">islclosure</span><span class="p">(</span><span class="kr">function</span> <span class="nf">f</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns true if <code>f</code> is a Lua function.</p>
+<h2 id="gethui">gethui</h2>
+<div class="codehilite"><pre><span></span><span class="n">Instance</span> <span class="n">gethui</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns a hidden renderable container separate from CoreGui, PlayerGui, and et cetera. <a href="https://developer.roblox.com/api-reference/class/ScreenGui">ScreenGuis</a> and <a href="https://developer.roblox.com/api-reference/class/Message">Messages</a> parented to this container will render on top of CoreGui. Although parented to <a href="https://developer.roblox.com/api-reference/class/DataModel">game</a>, game scripts cannot enumerate Game’s children to find this container or use functions such as <a href="https://developer.roblox.com/api-reference/function/Instance/FindFirstChild">FindFirstChild</a> to find the container or any of its descendants. Objects added to and removed from the container will not fire <a href="https://developer.roblox.com/api-reference/event/Instance/DescendantAdded">DescendantAdded</a> or <a href="https://developer.roblox.com/api-reference/event/Instance/DescendantRemoving">DescendantRemoving</a> signals on game.</p>
+<h2 id="getbspval">getbspval</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">getbspval</span><span class="p">(</span><span class="n">Instance</span> <span class="n">object</span><span class="p">,</span> <span class="n">string</span> <span class="n">property</span> <span class="p">[,</span> <span class="n">boolean</span> <span class="n">base64</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Reads a BinaryString property’s value. Useful for reading conventionally unreadable BinaryString properties such as Terrain.SmoothGrid, PartOperation.PhysicsData, <a href="https://developer.roblox.com/api-reference/class/BinaryStringValue">BinaryStringValue</a>.Value, and so on.</p>
+<h2 id="getnspval">getnspval</h2>
+<div class="codehilite"><pre><span></span><span class="n">variant</span> <span class="n">getnspval</span><span class="p">(</span><span class="n">Instance</span> <span class="n">object</span><span class="p">,</span> <span class="n">string</span> <span class="n">property</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a property’s value, even if it is unscriptable.</p>
+<h2 id="getunionassetid">getunionassetid</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">getunionassetid</span><span class="p">(</span><span class="n">Instance</span> <span class="n">union</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Equivalent to <code>getnspval(union, "AssetId")</code></p>
+<h2 id="getconnections">getconnections</h2>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">getconnections</span><span class="p">(</span><span class="n">RBXScriptSignal</span> <span class="n">signal</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns a list of Lua and engine connections to signal.</p>
+<h2 id="isluau">isluau</h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">isluau</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns true if the game is running on Roblox’s new Lua implementation, <a href="../base-environment/#Luau">Luau</a>.</p>
+<h2 id="getnamecallmethod">getnamecallmethod</h2>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">getnamecallmethod</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns the method parameter in the context of a __namecall metamethod. Only applies to <a href="../base-environment/#Luau">Luau-enabled games</a>. See init.lua for example usage.</p>
+<h2 id="luau"><strong>Luau</strong></h2>
+<p>Luau is a custom, speedy Lua implementation created by Roblox. It was first spotted in early April of 2019 before being <a href="https://devforum.roblox.com/t/faster-lua-vm-studio-beta/298659">publicly announced</a> by Roblox in late June. Luau does not change Lua’s syntax or behavior but implements a much faster runtime using optimizations in the parser and virtual machine.</p>
+<h2 id="elysian-support-v330-developer-notes">Elysian Support (v3.3.0+) &amp; Developer Notes</h2>
+<ul>
+<li>Elysian’s Luau support includes most, but not all, of Luau’s available optimizations.</li>
+<li>Decompiling Luau scripts is not yet possible due to Luau’s completely different bytecode and instruction set. A decompiler will be coming soon, courtesy of the <a href="https://x.synapse.to">Synapse X</a> team &lt;3.</li>
+<li>Luau bytecode does not include local or upvalue name information. As a result, <a href="../base-environment/#getlocals">getlocals</a>, <a href="../base-environment/#setlocal">setlocal</a>, <a href="../base-environment/#getupvals">getupvals</a>, and <a href="../base-environment/#setupval">setupval</a> now require indices (integers) instead of names (strings) in Luau-enabled games.</li>
+<li>One Luau optimization removes the method parameter of the __namecall metamethod. In Luau-enabled games, this parameter must now be obtained via the [getnamecallmethod]](../base-environment/#getnamecallmethod) function.</li>
+</ul>
+<h2 id="rbxscriptsignal-extensions"><strong><a href="https://developer.roblox.com/api-reference/datatype/RBXScriptSignal">RBXScriptSignal</a> Extensions</strong></h2>
+<h2 id="properties"><strong>Properties</strong></h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">Scriptable</span> <span class="p">[</span><span class="n">readonly</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Determines whether or not a signal is scriptable. Calling Connect or Wait on non-scriptable signals has no effect.</p>
+<h2 id="functions"><strong>Functions</strong></h2>
+<div class="codehilite"><pre><span></span><span class="n">RBXScriptConnection</span> <span class="n">RBXScriptSignal</span><span class="p">:</span><span class="n">Connect</span><span class="p">(</span><span class="kr">function</span> <span class="nf">func</span><span class="p">)</span>
+</pre></div>
+
+
+<p>In Elysian, Connect works as normal but can also register connections to non-scriptable signals. A list of non-scriptable/internal signals will appear here in the future.</p>
+<div class="codehilite"><pre><span></span><span class="n">table</span> <span class="n">RBXScriptSignal</span><span class="p">:</span><span class="n">GetConnections</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Equivalent to <code>getconnections(signal)</code></p>
+<h2 id="rbxscriptconnection-extensions"><strong><a href="https://developer.roblox.com/api-reference/datatype/RBXScriptConnection">RBXScriptConnection</a> Extensions</strong></h2>
+<h2 id="properties_1"><strong>Properties</strong></h2>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">LuaConnection</span> <span class="p">[</span><span class="n">readonly</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Determines whether or not the connection is attached to a Lua function.</p>
+<div class="codehilite"><pre><span></span><span class="n">boolean</span> <span class="n">Enabled</span>
+</pre></div>
+
+
+<p>Determines whether or not the connection is enabled. Disabled connections will not fire. Both Lua and engine connections can be disabled. Anti-AFK can now by achieved with a few lines of code:</p>
+<div class="codehilite"><pre><span></span><span class="kr">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="s2">&quot;Players&quot;</span><span class="p">.</span><span class="n">LocalPlayer</span><span class="p">.</span><span class="n">Idled</span><span class="p">:</span><span class="n">GetConnections</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="kr">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">.</span><span class="n">LuaConnection</span> <span class="kr">then</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">Enabled</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div>
+
+
+<p>This works by disabling a connection created by Roblox’s engine responsible for kicking the client when the user has been idle for more than 20 minutes.</p>
+<h2 id="functions_1"><strong>Functions</strong></h2>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nc">RBXScriptConnection</span><span class="p">:</span><span class="nf">GetFunction</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns a connection’s associated Lua function or nil if the connection is not a Lua connection or the function belongs to another Lua instance (corescript state, etc.)</p>
+<div class="codehilite"><pre><span></span><span class="n">void</span> <span class="n">RBXScriptConnection</span><span class="p">:</span><span class="n">GetThread</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Returns a connection’s associated Lua thread or nil if the connection is not a Lua connection or the thread belongs to another Lua instance (corescript state, etc.)</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Welcome!" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome!
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../ProtoSmasher/base-environment/" title="Base Environment" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Base Environment
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
